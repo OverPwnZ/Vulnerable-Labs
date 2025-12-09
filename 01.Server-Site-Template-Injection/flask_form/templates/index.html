@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario simple</title>
+</head>
+<body>
+    <h1>Formulario con Flask + Jinja2</h1>
+
+    <form method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <br><br>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required>
+
+        <br><br>
+
+        <button type="submit">Mostrar datos</button>
+    </form>
+
+    {% if nombre and edad %}
+        <hr>
+        <h2>Datos ingresados:</h2>
+        <p>Tu nombre es: <strong>{{ nombre }}</strong></p>
+        <p>Tu edad es: <strong>{{ edad }}</strong></p>
+    {% endif %}
+</body>
+</html>
+
